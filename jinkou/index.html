@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紧扣的我星星未曾删除-回忆珍藏与情感纪念平台</title>
+    <meta name="description" content="紧扣的我星星未曾删除，一个关于珍藏回忆、记录情感与纪念重要瞬间的温暖平台。在这里，每一颗星星都代表一段无法忘怀的故事，帮助你保存和分享那些未曾删除的珍贵记忆。">
+    <meta name="keywords" content="紧扣的我星星未曾删除,星星回忆,情感纪念,珍贵记忆,珍藏时刻,未删除的星星,回忆记录">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background: #0d0b1f;
+            color: #e8e6f0;
+            line-height: 1.7;
+        }
+        a {
+            color: #c9b8ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #a78bfa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 星空背景 */
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1b1635 0%, #0d0b1f 100%);
+            z-index: -2;
+        }
+        .stars-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1px 1px at 25px 35px, #fff, transparent),
+                radial-gradient(1px 1px at 150px 80px, #f0e6ff, transparent),
+                radial-gradient(1.5px 1.5px at 280px 120px, #e0d0ff, transparent),
+                radial-gradient(1px 1px at 400px 60px, #ffffff, transparent),
+                radial-gradient(1.5px 1.5px at 520px 200px, #d6c6ff, transparent),
+                radial-gradient(1px 1px at 650px 150px, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 100px 250px, #e8d8ff, transparent),
+                radial-gradient(1px 1px at 750px 300px, #ffffff, transparent),
+                radial-gradient(1.5px 1.5px at 900px 180px, #cfc0ff, transparent),
+                radial-gradient(1px 1px at 1050px 240px, #fff, transparent),
+                radial-gradient(1px 1px at 350px 380px, #f5eeff, transparent),
+                radial-gradient(1.5px 1.5px at 550px 450px, #ffffff, transparent);
+            background-size: 1100px 600px;
+            opacity: 0.7;
+            z-index: -1;
+            pointer-events: none;
+        }
+        /* 页眉 */
+        .site-header {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(13, 11, 31, 0.6);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-star {
+            color: #f5d76e;
+            font-size: 32px;
+            text-shadow: 0 0 15px rgba(245, 215, 110, 0.6);
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+        .main-nav a {
+            color: #c9c2dd;
+            font-size: 15px;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .main-nav a:hover {
+            color: #f5d76e;
+            border-bottom-color: #f5d76e;
+        }
+        /* 主视觉 */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #c9b8ff 50%, #f5d76e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: 20px;
+            color: #a49fc0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            letter-spacing: 1px;
+        }
+        .hero-quote {
+            font-size: 16px;
+            color: #7e7a99;
+            font-style: italic;
+            border-left: 3px solid #f5d76e;
+            padding-left: 20px;
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        /* 栏目通用 */
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #f5d76e;
+        }
+        .section-desc {
+            color: #8f8aaa;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+        .section {
+            padding: 50px 0;
+        }
+        /* 故事卡片网格 */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .story-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 30px 24px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+        .story-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(245, 215, 110, 0.4);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .star-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            display: block;
+            color: #f5d76e;
+            text-shadow: 0 0 20px rgba(245, 215, 110, 0.4);
+        }
+        .story-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #e8e0ff;
+            font-weight: 500;
+        }
+        .story-card p {
+            font-size: 14px;
+            color: #9b96b8;
+            line-height: 1.8;
+        }
+        /* 时间轴 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 30px 0 0;
+            border-left: 2px solid rgba(245, 215, 110, 0.3);
+        }
+        .timeline-item {
+            position: relative;
+            padding: 20px 20px 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .timeline-item:hover {
+            border-color: rgba(201, 184, 255, 0.3);
+        }
+        .timeline-item::before {
+            content: "✦";
+            position: absolute;
+            left: -38px;
+            top: 25px;
+            color: #f5d76e;
+            font-size: 16px;
+            background: #0d0b1f;
+            padding: 0 5px;
+        }
+        .timeline-date {
+            font-size: 13px;
+            color: #f5d76e;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .timeline-item h3 {
+            font-size: 18px;
+            color: #e0d8ff;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .timeline-item p {
+            font-size: 14px;
+            color: #9b96b8;
+            line-height: 1.8;
+        }
+        /* 纪念方式 */
+        .ways-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .way-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s;
+        }
+        .way-item:hover {
+            background: rgba(245, 215, 110, 0.05);
+            border-color: rgba(245, 215, 110, 0.2);
+        }
+        .way-icon {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 14px;
+        }
+        .way-item h3 {
+            font-size: 16px;
+            color: #ddd4ff;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .way-item p {
+            font-size: 13px;
+            color: #8883a3;
+            line-height: 1.7;
+        }
+        /* FAQ */
+        .faq-list {
+            margin-top: 30px;
+            display: grid;
+            gap: 15px;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 20px 25px;
+        }
+        .faq-item details {
+            cursor: pointer;
+        }
+        .faq-item summary {
+            font-size: 16px;
+            color: #ddd4ff;
+            font-weight: 500;
+            outline: none;
+            list-style: none;
+            position: relative;
+            padding-right: 30px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #f5d76e;
+            font-size: 22px;
+            font-weight: 300;
+        }
+        .faq-item details[open] summary::after {
+            content: "−";
+        }
+        .faq-item p {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #9b96b8;
+            line-height: 1.8;
+        }
+        /* 页脚 */
+        .site-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 40px 0 30px;
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            font-size: 14px;
+            color: #7e7a99;
+        }
+        .footer-links a:hover {
+            color: #c9b8ff;
+        }
+        .copyright {
+            font-size: 13px;
+            color: #66627d;
+        }
+        .footer-tagline {
+            font-size: 13px;
+            color: #5c5878;
+            font-style: italic;
+        }
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .story-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .ways-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 38px;
+                letter-spacing: 3px;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .main-nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero {
+                padding: 50px 15px 40px;
+            }
+            .hero h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            .ways-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 22px;
+            }
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <div class="stars-bg"></div>
+    <div class="stars-overlay"></div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-star">✦</span>
+                <span>紧扣的我星星未曾删除</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#stories">星星故事</a></li>
+                    <li><a href="#timeline">记忆轨迹</a></li>
+                    <li><a href="#ways">纪念方式</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 主视觉 -->
+        <section class="hero">
+            <div class="container">
+                <h1>紧扣的我星星未曾删除</h1>
+                <p class="hero-sub">每一颗星星都承载着一段故事，那些紧扣心间的记忆，从未被时光抹去。</p>
+                <p class="hero-quote">“有些星光，即使遥远，也始终在心底闪烁。它们不曾消失，只是换了一种方式，照亮我们前行的路。”</p>
+            </div>
+        </section>
+
+        <!-- 星星故事 -->
+        <section class="section" id="stories">
+            <div class="container">
+                <h2 class="section-title">星星故事 · 未曾删除的记忆</h2>
+                <p class="section-desc">在这里，每一段叙述都是关于珍藏、纪念与守望的故事。</p>
+                <div class="story-grid">
+                    <article class="story-card">
+                        <span class="star-icon">✦</span>
+                        <h3>紧扣的约定</h3>
+                        <p>有些约定，像夜空中最亮的星。即使岁月流转，人事变迁，那份紧扣在心中的承诺，依然清晰如昨。我们相信，真正重要的约定，从不需要刻意记起，因为它们从未被删除过。</p>
+                    </article>
+                    <article class="story-card">
+                        <span class="star-icon">✧</span>
+                        <h3>星光下的守望</h3>
+                        <p>当一个人愿意成为另一颗星的守望者，时间便有了温度。那些未曾删除的星光，不仅照亮了回忆的角落，也成为了孤单时刻最温柔的陪伴。</p>
+                    </article>
+                    <article class="story-card">
+                        <span class="star-icon">☆</span>
+                        <h3>未曾远去的名字</h3>
+                        <p>有些人虽然已经离开我们的日常，但他们的名字始终挂在心空。就像一颗永不坠落的星，提醒着我们曾经相遇的美好，以及那份不会因为距离而消失的情感连接。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 记忆轨迹时间轴 -->
+        <section class="section" id="timeline">
+            <div class="container">
+                <h2 class="section-title">记忆轨迹 · 紧扣的时间线</h2>
+                <p class="section-desc">那些被小心保存的瞬间，构成了我们内心最真实的地图。</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">最初 · 相遇的时刻</span>
+                        <h3>第一颗星被点亮</h3>
+                        <p>所有的故事都有一个起点。当第一颗星在心中被点亮，我们开始懂得，有些人和事，从相遇的那一刻起，就已经注定不会被遗忘。这份印记，如同星空中的导航坐标，指引着情感的归途。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">途中 · 共同经历</span>
+                        <h3>星光交错的旅程</h3>
+                        <p>在共同的旅程中，无数微小的瞬间汇聚成璀璨的星河。每一次共鸣、每一份理解、每一个共同度过的日子，都像是为这段记忆增加了一颗新的星星。它们相互连接，构成了独一无二的星座图谱。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">此刻 · 未曾删除的现在</span>
+                        <h3>星光依然明亮</h3>
+                        <p>即便时光流逝，那些紧扣的记忆依然清晰。它们没有被覆盖，没有被遗忘，就像夜空中的星星，始终在那里散发着属于自己的光芒。此刻，我们依然愿意守护这份光芒，让它继续照亮未来的路。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 纪念方式 -->
+        <section class="section" id="ways">
+            <div class="container">
+                <h2 class="section-title">珍藏方式 · 让星光持续闪耀</h2>
+                <p class="section-desc">选择一种方式，让重要的记忆与情感得以安放和延续。</p>
+                <div class="ways-grid">
+                    <div class="way-item">
+                        <span class="way-icon">📝</span>
+                        <h3>书写记录</h3>
+                        <p>用文字捕捉当下的感受与画面，让瞬间的情绪成为可以反复回味的篇章。记录，是给未来的自己最真诚的礼物。</p>
+                    </div>
+                    <div class="way-item">
+                        <span class="way-icon">🖼️</span>
+                        <h3>影像珍藏</h3>
+                        <p>照片与影像将流动的时间凝固成可触碰的画面。每一次翻看，都是与过去的自己重逢，与那些重要的人再次相遇。</p>
+                    </div>
+                    <div class="way-item">
+                        <span class="way-icon">🎵</span>
+                        <h3>旋律标记</h3>
+                        <p>一首歌、一段旋律，往往能瞬间将我们带回某个特定的时刻。声音是记忆最忠诚的载体，它让情感在音符间流淌不息。</p>
+                    </div>
+                    <div class="way-item">
+                        <span class="way-icon">💬</span>
+                        <h3>对话延续</h3>
+                        <p>与理解我们的人分享那些重要的故事，让记忆在对话中获得新的生命。被倾听的回忆，会变得更加鲜活而立体。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="section" id="faq">
+            <div class="container">
+                <h2 class="section-title">关于记忆与星光 · 常见问题</h2>
+                <p class="section-desc">一些对“紧扣的我星星未曾删除”这一主题的常见思考与回应。</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <details>
+                            <summary>“紧扣的我星星未曾删除”这句话想要表达什么？</summary>
+                            <p>这句话的核心意象是“星星”与“删除”的对照。星星通常代表珍贵、永恒与美好的记忆或情感；而“未曾删除”则强调这些内容在内心深处的不可磨灭性。整句话传递的是一种对重要记忆的珍视与守护——即便世事变迁，有些人和事依然牢牢地扣在心底，从未被清理或遗忘。</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>为什么人们会对某些记忆特别执着？</summary>
+                            <p>人们之所以对某些记忆特别执着，通常是因为这些记忆关联着重要的情感体验、关键的人生节点或深刻的自我认知。它们构成了我们身份的一部分，帮助我们理解自己是谁、重视什么、如何与世界连接。这种执着并非单纯的怀旧，而是一种对自我历史完整性的保护。</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>如何面对那些想要放下却又舍不得的记忆？</summary>
+                            <p>面对复杂的情感记忆，可以尝试给它们一个恰当的位置——既不强迫自己遗忘，也不让它们过度占据当下。你可以通过书写、创作或与他人对话的方式，为这些记忆赋予新的意义。真正的放下不一定是删除，而是让它们成为你生命故事中平和的一部分。</p>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>“星星”在这里有特别的象征意义吗？</summary>
+                            <p>在文学与日常表达中，星星常被用来象征希望、指引、永恒与美好。在这句话的语境里，星星可能代表那些在生命中闪闪发光的人际关系、重要时刻或个人信念。它们遥远但清晰，安静却持续地影响着我们，成为内心夜空中最稳定的坐标。</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-links">
+                <a href="#stories">星星故事</a>
+                <a href="#timeline">记忆轨迹</a>
+                <a href="#ways">珍藏方式</a>
+                <a href="#faq">常见问题</a>
+            </div>
+            <div class="footer-tagline">✦ 每一颗星都值得被记住</div>
+            <div class="copyright">© 紧扣的我星星未曾删除 · 记忆珍藏平台</div>
+        </div>
+    </footer>
+</body>
+</html>
