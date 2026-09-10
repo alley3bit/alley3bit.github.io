@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>末路狂杀-硬核动作漫画专题站与热血追更指南</title>
+    <meta name="description" content="末路狂杀漫画专题站，为你全面解析暗黑都市背景下的硬核格斗故事。了解主要角色、剧情走向、精彩看点，以及官方正规的阅读方式与最新更新动态。">
+    <meta name="keywords" content="末路狂杀,末路狂杀漫画,末路狂杀更新,硬核格斗漫画,暗黑都市漫画,热血漫画推荐">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            background: #121212;
+            color: #d8d8d8;
+            line-height: 1.5;
+        }
+        a {
+            color: #c0392b;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #e74c3c;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 头部 */
+        .site-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 4px solid #c0392b;
+            padding: 18px 0;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            font-size: 32px;
+            font-weight: 900;
+            color: #c0392b;
+            background: #1a1a1a;
+            padding: 6px 12px;
+            border: 2px solid #c0392b;
+            border-radius: 6px;
+            letter-spacing: 2px;
+        }
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f0f0f0;
+            letter-spacing: 1px;
+        }
+        .site-title span {
+            color: #c0392b;
+        }
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+        .header-nav a {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .header-nav a:hover {
+            color: #e74c3c;
+            border-bottom-color: #c0392b;
+        }
+        /* 首屏 Hero */
+        .hero {
+            background: linear-gradient(145deg, #1c1c1c 0%, #2b2b2b 60%, #3a1f1f 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #333;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, #121212);
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .hero-copy h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f5f5f5;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 rgba(192, 57, 43, 0.6);
+        }
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #e0a0a0;
+            font-weight: 500;
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+        }
+        .hero-desc {
+            color: #a8a8a8;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+        .hero-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(192, 57, 43, 0.2);
+            border: 1px solid #c0392b;
+            color: #e8a0a0;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .hero-visual {
+            background: #1e1e1e;
+            border: 1px solid #3a3a3a;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-visual::before {
+            content: "MK";
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 9rem;
+            font-weight: 900;
+            color: rgba(192,57,43,0.08);
+            line-height: 1;
+        }
+        .visual-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 8px;
+        }
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .stat-value {
+            color: #e8e8e8;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .quick-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #c0392b;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #e0e0e0;
+            border: 1px solid #555;
+        }
+        .btn-outline:hover {
+            border-color: #c0392b;
+            color: #e74c3c;
+        }
+        /* 更新栏 */
+        .update-bar {
+            background: #1a1a1a;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 12px 0;
+            font-size: 0.9rem;
+        }
+        .update-inner {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .update-label {
+            color: #c0392b;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .update-text {
+            color: #aaa;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        /* 内容区 */
+        .content-section {
+            padding: 50px 0;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-left: 4px solid #c0392b;
+            padding-left: 16px;
+        }
+        .section-header h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #f0f0f0;
+            letter-spacing: 1px;
+        }
+        .section-header .more-link {
+            color: #c0392b;
+            font-size: 0.9rem;
+        }
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: #c0392b;
+        }
+        .card-thumb {
+            background: linear-gradient(135deg, #2c2c2c, #3a2a2a);
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.15);
+            border-bottom: 2px solid #c0392b;
+            letter-spacing: 4px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-body h3 {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .card-body p {
+            font-size: 0.9rem;
+            color: #999;
+            line-height: 1.5;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #2a2a2a;
+            font-size: 0.8rem;
+            color: #777;
+        }
+        /* 角色双栏 */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .char-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .char-item {
+            background: #1e1e1e;
+            border-left: 3px solid #c0392b;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .char-item h4 {
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+        .char-item p {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        /* 剧情时间线 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #3a3a3a;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #c0392b;
+            border: 2px solid #1e1e1e;
+        }
+        .timeline-item h3 {
+            color: #d0d0d0;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            color: #888;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        /* 阅读指南 */
+        .guide-box {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        .guide-box h3 {
+            color: #e0e0e0;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .guide-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .guide-list li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .guide-num {
+            background: #c0392b;
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-q {
+            padding: 16px 20px;
+            font-weight: 600;
+            color: #d0d0d0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #222;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .faq-q::after {
+            content: "+";
+            font-size: 1.4rem;
+            color: #c0392b;
+        }
+        .faq-a {
+            padding: 16px 20px;
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            background: #1a1a1a;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #0f0f0f;
+            border-top: 3px solid #c0392b;
+            padding: 40px 0 20px;
+            margin-top: 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .footer-col a {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        .footer-col a:hover {
+            color: #c0392b;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-copy h1 {
+                font-size: 2.2rem;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-copy h1 {
+                font-size: 1.8rem;
+            }
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .content-section {
+                padding: 30px 0;
+            }
+        }
+        @media (max-width: 400px) {
+            .container {
+                padding: 0 14px;
+            }
+            .logo-icon {
+                font-size: 24px;
+            }
+            .site-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">末路</div>
+                <div class="site-title">末路狂杀<span>专题站</span></div>
+            </div>
+            <nav class="header-nav">
+                <a href="#story">剧情解析</a>
+                <a href="#characters">主要角色</a>
+                <a href="#chapters">章节连载</a>
+                <a href="#guide">阅读指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <h1>末路狂杀</h1>
+                <div class="hero-tagline">暗黑都市 · 硬核格斗 · 生死边缘</div>
+                <p class="hero-desc">
+                    《末路狂杀》是一部以现代都市底层为舞台的硬核动作漫画。故事聚焦于一群被逼至绝境的小人物，在灰色地带的挣扎与反击。拳拳到肉的格斗场面、压抑而真实的生存氛围，以及不断反转的剧情，让这部作品在热血漫画爱好者中积累了相当口碑。本站为你提供全面的剧情整理、角色档案与正规阅读指引。
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">🔥 热血打斗</span>
+                    <span class="badge">🖤 暗黑写实</span>
+                    <span class="badge">📖 剧情向</span>
+                    <span class="badge">🎯 成人向</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">作品状态</span>
+                        <span class="stat-value">连载中</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">剧情阶段</span>
+                        <span class="stat-value">第二部 · 复仇篇</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">主要舞台</span>
+                        <span class="stat-value">虚构都市「临港」</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">风格标签</span>
+                        <span class="stat-value">格斗/犯罪/生存</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">读者定位</span>
+                        <span class="stat-value">青年及以上</span>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="#chapters" class="btn btn-primary">查看最新章节</a>
+                        <a href="#guide" class="btn btn-outline">官方阅读渠道</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="update-bar">
+        <div class="container update-inner">
+            <span class="update-label">⚡ 更新速递</span>
+            <span class="update-text">最新话：第147话「崩坏的前夜」已更新 · 评论区热议：主角团是否走向分裂？</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- 剧情概览 -->
+        <section class="content-section" id="story">
+            <div class="container">
+                <div class="section-header">
+                    <h2>故事脉络</h2>
+                    <span class="more-link">从绝境开始的生存之战</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>序章 · 坠落</h3>
+                        <p>前特种兵陈末因一次任务背锅入狱，出狱后发现自己唯一的妹妹卷入城市地下势力的债务纠纷，下落不明。曾经守护信念的战士，一夜之间失去所有。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>第一部 · 狂杀</h3>
+                        <p>为了寻找妹妹，陈末主动踏入临港市最黑暗的拳场与地下世界。他开始以「狂杀」之名参加地下格斗赛，用拳头撬开一个个线索，也与各路狠角色结下恩怨。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>第二部 · 复仇</h3>
+                        <p>隐藏在城市幕后的真正黑手逐渐浮现。陈末发现当年的事件并非偶然，而是一张笼罩整座城市的大网。复仇与救赎，成为他继续走下去的唯一理由。</p>
+                    </div>
+                </div>
+                <div class="guide-box">
+                    <h3>本作核心看点</h3>
+                    <ul class="guide-list">
+                        <li><span class="guide-num">1</span><span>写实格斗风格：动作设计参考职业格斗技巧，打击感与分镜张力十足，不是夸张的超能力对战，而是充满力量碰撞的硬派战斗。</span></li>
+                        <li><span class="guide-num">2</span><span>灰色人设群像：没有绝对的正邪，每个角色都有自己的动机与底线。主角也并非完美英雄，他同样有暴躁、偏执的一面。</span></li>
+                        <li><span class="guide-num">3</span><span>紧凑叙事节奏：每一话信息量较大，主线推进毫不拖沓，同时穿插关键回忆补完人物动机，让打斗与剧情深度结合。</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要角色 -->
+        <section class="content-section" id="characters" style="background:#161616;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心人物</h2>
+                    <span class="more-link">在黑暗中行走的他们</span>
+                </div>
+                <div class="two-col">
+                    <div class="char-list">
+                        <div class="char-item">
+                            <h4>陈末 / 「狂杀」</h4>
+                            <p>本作主角。沉默寡言，身手极强。表面冷漠，内心对妹妹的愧疚与执念驱动着他不断挥拳。擅长综合格斗，尤其是近身膝肘与地面压制。</p>
+                        </div>
+                        <div class="char-item">
+                            <h4>林岚</h4>
+                            <p>地下诊所的医生，曾在大医院任职。因一次医疗事故被吊销执照，辗转来到临港。是少数愿意帮助陈末的人，也是他情感上的重要羁绊。</p>
+                        </div>
+                        <div class="char-item">
+                            <h4>铁叔</h4>
+                            <p>地下拳场的实际经营者，老谋深算。年轻时也是一名拳手，对陈末的处境心知肚明，却总以利益为优先。他的立场始终模糊，是剧情里的关键变量。</p>
+                        </div>
+                    </div>
+                    <div class="char-list">
+                        <div class="char-item">
+                            <h4>阿鬼</h4>
+                            <p>反派阵营中的顶尖打手。与陈末多次交手，两人之间既有生死搏杀，也有某种扭曲的互相认可。他的过去与临港的底层生态紧密相连。</p>
+                        </div>
+                        <div class="char-item">
+                            <h4>陈小雨</h4>
+                            <p>陈末的妹妹。性格开朗，却因轻信他人而卷入债务陷阱。她的下落是贯穿全书的主线悬念，目前生死未卜。</p>
+                        </div>
+                        <div class="char-item">
+                            <h4>神秘人「K」</h4>
+                            <p>第二部开始出现的蒙面角色，似乎掌握着所有事件的核心内幕。他多次暗中引导陈末，但真实目的成谜。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 章节连载 -->
+        <section class="content-section" id="chapters">
+            <div class="container">
+                <div class="section-header">
+                    <h2>章节连载</h2>
+                    <span class="more-link">近期更新与经典篇章</span>
+                </div>
+                <p style="color:#999; margin-bottom:24px;">以下是编辑部整理的近期剧情推进节点，帮助新读者快速定位当前剧情位置。具体完整章节请通过正规漫画平台阅读。</p>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-thumb">VOL.01</div>
+                        <div class="card-body">
+                            <h3>第一卷 · 入局</h3>
+                            <p>陈末出狱后初入临港，为寻找妹妹线索，被迫参加地下拳赛。首战即遭遇强敌，艰难获胜后，他的名字开始在地下世界传开。</p>
+                            <div class="card-meta">
+                                <span>第1话 - 第24话</span>
+                                <span>已完结</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">VOL.02</div>
+                        <div class="card-body">
+                            <h3>第二卷 · 暗流</h3>
+                            <p>陈末逐渐接触到底层势力的结构，也结识了林岚与铁叔。妹妹的线索指向更庞大的组织，他决定深入虎穴。</p>
+                            <div class="card-meta">
+                                <span>第25话 - 第58话</span>
+                                <span>已完结</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">VOL.03</div>
+                        <div class="card-body">
+                            <h3>第三卷 · 裂痕</h3>
+                            <p>与阿鬼的宿命对决，陈末身负重伤。铁叔的真实立场开始动摇，林岚的过去也被揭开。各路人马之间的矛盾一触即发。</p>
+                            <div class="card-meta">
+                                <span>第59话 - 第98话</span>
+                                <span>已完结</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">VOL.04</div>
+                        <div class="card-body">
+                            <h3>第四卷 · 狂杀再临</h3>
+                            <p>神秘人K出现，告知陈末关于其妹妹下落的惊人真相。为了获得最终线索，他必须打赢一场没有规则的地下淘汰赛。</p>
+                            <div class="card-meta">
+                                <span>第99话 - 第132话</span>
+                                <span>已完结</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">VOL.05</div>
+                        <div class="card-body">
+                            <h3>第五卷 · 复仇之路</h3>
+                            <p>陈末终于接近幕后黑手。但复仇的代价远比想象中沉重，身边的伙伴接连陷入危机。他必须重新审视自己的选择。</p>
+                            <div class="card-meta">
+                                <span>第133话 - 至今</span>
+                                <span>连载中</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-thumb">EXTRA</div>
+                        <div class="card-body">
+                            <h3>番外篇 · 临港往事</h3>
+                            <p>讲述铁叔与阿鬼年轻时的交集，补充临港地下势力形成的历史背景。对理解主线人物动机很有帮助。</p>
+                            <div class="card-meta">
+                                <span>不定期更新</span>
+                                <span>番外</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 阅读指南 -->
+        <section class="content-section" id="guide" style="background:#161616;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>如何正确追更</h2>
+                    <span class="more-link">支持正版，阅读体验更佳</span>
+                </div>
+                <div class="guide-box">
+                    <h3>官方阅读渠道建议</h3>
+                    <ul class="guide-list">
+                        <li><span class="guide-num">✓</span><span><strong>国内主流漫画平台：</strong>建议优先在腾讯动漫、快看漫画、哔哩哔哩漫画等正版平台搜索「末路狂杀」。不同平台的更新进度和上架卷数可能略有差异，但均为作者授权渠道，画质与翻译质量有保障。</span></li>
+                        <li><span class="guide-num">✓</span><span><strong>出版情况：</strong>目前该作品尚未发行简体中文实体单行本，后续如有出版计划，请以官方公告为准。购买时注意辨别非官方盗印版本。</span></li>
+                        <li><span class="guide-num">✓</span><span><strong>更新频率：</strong>作品目前为双周更新模式，每月大致更新两话。偶尔因作者休整或剧情打磨会出现短期停更，这是比较常见的创作节奏。</span></li>
+                        <li><span class="guide-num">✓</span><span><strong>阅读顺序：</strong>建议从第一卷开始按顺序阅读，番外篇可以在第一部结束后阅读，避免时间线混乱。</span></li>
+                        <li><span class="guide-num">✓</span><span><strong>社区讨论：</strong>在官方平台评论区或相关贴吧、论坛可以找到同好讨论。注意遵守各社区规范，避免讨论盗版资源链接。</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="content-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <span class="more-link">读者最关心的事</span>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-q">《末路狂杀》适合什么年龄段的读者？</div>
+                        <div class="faq-a">这部作品包含较多暴力打斗场面与压抑的成人向情节，整体基调比较黑暗写实。建议16岁以上的读者观看。对于年龄较小的读者，可以先了解剧情概述，待心智更成熟后再阅读。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">作品中有感情线吗？</div>
+                        <div class="faq-a">有，但感情线并非故事主线，更多作为人物动机的补充。主角与林岚之间有着较为隐晦的情感互动，但作者处理得比较克制，不会影响整体热血硬核的基调。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">为什么叫「末路狂杀」？</div>
+                        <div class="faq-a">「末路」指代主角被逼至绝境、没有退路的处境；「狂杀」既是主角在地下拳场的称号，也象征着他在绝望中爆发出的生存意志与战斗本能。整个标题准确概括了作品的悲剧色彩与暴力美学。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">作品是否已经完结？</div>
+                        <div class="faq-a">尚未完结。目前第二部「复仇篇」正在连载中，主线剧情尚未完全收束。作者曾表示整个故事大概会分为三部左右的篇幅，目前处于中后段的高潮铺垫期。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>内容导航</h4>
+                    <ul>
+                        <li><a href="#story">剧情解析</a></li>
+                        <li><a href="#characters">主要角色</a></li>
+                        <li><a href="#chapters">章节连载</a></li>
+                        <li><a href="#guide">阅读指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关推荐</h4>
+                    <ul>
+                        <li><a href="#">硬核格斗漫画推荐</a></li>
+                        <li><a href="#">暗黑都市题材作品</a></li>
+                        <li><a href="#">国漫热血新作</a></li>
+                        <li><a href="#">地下拳场题材盘点</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">站点介绍</a></li>
+                        <li><a href="#">内容投稿</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>本站为非官方爱好者专题站，仅提供作品介绍与信息整理，不提供任何盗版资源。漫画版权归原作者及发行方所有。<br>支持正版，从每一次阅读做起。</p>
+            </div>
+        </div>
+    </footer>
+</body>
+  </html>
