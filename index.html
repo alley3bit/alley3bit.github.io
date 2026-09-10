@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cs1.6无限血作弊器-游戏辅助工具与使用说明</title>
+    <meta name="description" content="了解cs1.6无限血作弊器的功能原理、使用风险与安全注意事项，提供游戏公平性讨论与常见问题解答，帮助玩家理性看待游戏辅助工具。">
+    <meta name="keywords" content="cs1.6,无限血,作弊器,游戏辅助,使用说明,风险提示">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #0b0e14;
+            color: #c9d1d9;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部区域 */
+        .site-header {
+            background: linear-gradient(135deg, #10151f 0%, #1a1f2e 100%);
+            border-bottom: 1px solid #1e2a3a;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(145deg, #f04444, #b71c1c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(240, 68, 68, 0.3);
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f0f3f8;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: #f04444;
+        }
+
+        .header-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .header-nav a {
+            color: #8b949e;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .header-nav a:hover {
+            color: #f04444;
+        }
+
+        .header-cta {
+            background: #f04444;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .header-cta:hover {
+            background: #d32f2f;
+            transform: translateY(-1px);
+        }
+
+        /* 主视觉 Hero */
+        .hero-section {
+            padding: 70px 0 60px;
+            background: radial-gradient(ellipse at 20% 30%, #1e2a3a 0%, #0b0e14 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(240, 68, 68, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(240, 68, 68, 0.15);
+            color: #f04444;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(240, 68, 68, 0.25);
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #f0f3f8;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .highlight {
+            color: #f04444;
+            position: relative;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #8b949e;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f0f3f8;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #8b949e;
+            margin-top: 4px;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, #151b26, #1d2432);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid #2a3446;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f0f3f8;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-card-title .icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(240, 68, 68, 0.15);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #1e2a3a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list .check {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        /* 内容区块 */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f0f3f8;
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f04444, #ff8a80);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: #8b949e;
+            margin-bottom: 35px;
+            font-size: 1rem;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #151b26;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #1e2a3a;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #f04444;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(240, 68, 68, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: #f0f3f8;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #8b949e;
+            line-height: 1.6;
+        }
+
+        /* 双栏布局 */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .info-box {
+            background: #151b26;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #1e2a3a;
+        }
+
+        .info-box h3 {
+            font-size: 1.3rem;
+            color: #f0f3f8;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box ul li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #9aa5b1;
+            font-size: 0.95rem;
+        }
+
+        .info-box ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #f04444;
+        }
+
+        /* 警告框 */
+        .warning-box {
+            background: rgba(240, 68, 68, 0.08);
+            border-left: 4px solid #f04444;
+            padding: 20px 25px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+        }
+
+        .warning-box strong {
+            color: #f04444;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .warning-box p {
+            color: #c9d1d9;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ 手风琴 */
+        .faq-section {
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            background: #151b26;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #1e2a3a;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 25px;
+            font-weight: 600;
+            color: #f0f3f8;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #1a2130;
+        }
+
+        .faq-question .arrow {
+            transition: transform 0.3s;
+            color: #f04444;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 25px 20px;
+        }
+
+        .faq-item.active .arrow {
+            transform: rotate(45deg);
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #0d1117;
+            border-top: 1px solid #1e2a3a;
+            padding: 40px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-column h4 {
+            color: #f0f3f8;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column a {
+            color: #8b949e;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #f04444;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #1e2a3a;
+            text-align: center;
+            color: #6e7681;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .header-nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .header-cta {
+                display: none;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- 头部导航 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">CS</div>
+                <div class="logo-text">CS1.6<span>工具</span></div>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#overview">功能解析</a></li>
+                    <li><a href="#usage">使用指引</a></li>
+                    <li><a href="#warning">风险提示</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <button class="header-cta">在线咨询</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 主视觉区域 -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">🔥 游戏辅助工具专题</div>
+                    <h1 class="hero-title">CS1.6 <span class="highlight">无限血</span>作弊器全面解析</h1>
+                    <p class="hero-desc">
+                        深入探讨CS1.6无限血作弊器的技术原理、实际使用场景、潜在风险与替代方案。无论你是出于好奇还是实际需求，这里提供客观、全面的信息参考，帮助你做出理性判断。
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">客观分析</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24h</div>
+                            <div class="stat-label">更新维护</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3D</div>
+                            <div class="stat-label">安全视角</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-title">
+                        <span class="icon">⚡</span> 核心功能速览
+                    </div>
+                    <ul class="feature-list">
+                        <li><span class="check">✓</span> 无限血量机制模拟</li>
+                        <li><span class="check">✓</span> 内存数值实时修改</li>
+                        <li><span class="check">✓</span> 多版本兼容支持</li>
+                        <li><span class="check">✓</span> 局域网/单机适用</li>
+                        <li><span class="check">✓</span> 智能防检测模块</li>
+                        <li><span class="check">✓</span> 一键启停快捷键</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能解析 -->
+        <section class="content-section" id="overview">
+            <div class="container">
+                <h2 class="section-title">无限血作弊器工作原理</h2>
+                <p class="section-subtitle">了解技术底层逻辑，正确看待游戏辅助工具</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">🧬</div>
+                        <h3>内存地址定位</h3>
+                        <p>通过扫描游戏进程的内存空间，定位到存储角色生命值的变量地址。CS1.6作为经典引擎游戏，其数值存储结构相对简单，这也是辅助工具能够稳定实现功能的原因之一。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔧</div>
+                        <h3>数值实时锁定</h3>
+                        <p>作弊器会在后台持续监测血量数值变化，一旦检测到数值低于设定阈值，立即将内存中的数值改写为预设的"无限血"状态，实现近似无敌的效果。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>进程注入技术</h3>
+                        <p>部分高级版本采用DLL注入方式，将功能模块嵌入游戏进程内运行，这种方式相对隐蔽，但也增加了系统冲突和报错的风险。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📡</div>
+                        <h3>网络同步欺骗</h3>
+                        <p>在多人对战模式下，作弊器还需处理网络同步问题。通过模拟客户端数据包，使服务器端接收到虚假的受伤反馈，从而维持无限血状态。</p>
+                    </div>
+                </div>
+
+                <!-- 警告信息 -->
+                <div class="warning-box">
+                    <strong>⚠️ 重要风险提示</strong>
+                    <p>使用作弊器违反多数游戏服务器规定，可能导致账号被封禁。在正规对战平台（如Steam、ESEA等）使用作弊工具，会面临永久封禁风险。此外，来历不明的作弊器文件可能包含恶意代码，对电脑系统安全构成威胁。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用指引与道德讨论 -->
+        <section class="content-section" id="usage">
+            <div class="container">
+                <h2 class="section-title">使用场景与道德边界</h2>
+                <p class="section-subtitle">什么样的场景适合使用？哪些情况应该避免？</p>
+
+                <div class="two-column">
+                    <div class="info-box">
+                        <h3>🖥️ 可接受的场景</h3>
+                        <ul>
+                            <li>离线单机模式自行测试游戏机制</li>
+                            <li>与好友在局域网内进行娱乐性对抗</li>
+                            <li>研究老游戏引擎的内存管理机制</li>
+                            <li>体验地图中的隐藏区域或特殊玩法</li>
+                            <li>制作自定义游戏MOD时的调试辅助</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>🚫 应避免的场景</h3>
+                        <ul>
+                            <li>任何带有排名系统的在线对战</li>
+                            <li>电竞比赛或正式赛事</li>
+                            <li>使用他人账号进行游戏</li>
+                            <li>在公共服务器破坏其他玩家体验</li>
+                            <li>利用作弊器进行商业牟利行为</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <h3>💡 公平竞技的重要性</h3>
+                    <p style="color: #8b949e; font-size: 0.95rem; margin-top: 10px;">
+                        CS1.6作为一款经典竞技射击游戏，其核心魅力在于公平对抗中展现个人技术与团队配合。无限血作弊器虽然能带来短暂的"无敌"体验，但长远来看会损害游戏社区的健康发展。如果你希望提升游戏水平，建议通过练习枪法、学习战术、观看高水平比赛录像等方式成长，这样获得的成就感远比作弊来得真实且持久。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 安全使用指南 -->
+        <section class="content-section" id="warning">
+            <div class="container">
+                <h2 class="section-title">安全使用注意事项</h2>
+                <p class="section-subtitle">如果你决定在单机或局域网环境中使用，请务必注意以下事项</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">🔐</div>
+                        <h3>来源可靠性</h3>
+                        <p>仅从可信渠道获取工具，避免使用来历不明的压缩包。下载后建议先使用杀毒软件进行全盘扫描，确认无恶意代码后再运行。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💾</div>
+                        <h3>数据备份</h3>
+                        <p>在使用作弊器前，建议备份游戏配置文件和个人存档。部分工具在修改内存时可能导致游戏崩溃，备份可以避免不必要的损失。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🌐</div>
+                        <h3>断网使用</h3>
+                        <p>在单机或局域网使用时，建议断开互联网连接。这既避免了误触在线模式的风险，也降低了工具因网络通信被检测的可能性。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⏱️</div>
+                        <h3>使用时长</h3>
+                        <p>长时间开启作弊器可能导致游戏内存异常或系统资源占用过高。建议每次使用不超过2小时，使用后重启游戏以释放内存。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ 部分 -->
+        <section class="content-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <p class="section-subtitle">关于CS1.6无限血作弊器的典型疑问</p>
+
+                <div class="faq-section">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            无限血作弊器会损坏我的电脑吗？
+                            <span class="arrow">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            正规渠道获取的作弊器本身不会直接损坏硬件，但存在软件冲突风险。部分低质量工具可能包含广告软件或木马程序，长期运行会占用系统资源、窃取个人信息，甚至导致系统崩溃。因此强烈建议仅在单机环境中使用，并定期进行系统安全检查。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            为什么在正版Steam版本上无法使用？
+                            <span class="arrow">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Steam版本的CS1.6内置了VAC反作弊系统（Valve Anti-Cheat），当检测到内存数据被非正常修改时，会触发警告并可能导致账号封禁。因此多数作弊器仅支持盗版版本或非VAC保护的服务器。建议不要在任何在线模式下尝试使用作弊工具。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            有没有不违反规则的替代方法？
+                            <span class="arrow">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            如果你只是想体验"不死"的感觉，可以尝试单机模式下的控制台命令。在CS1.6中按"~"键打开控制台，输入"god"（上帝模式）即可获得无敌效果，这是官方支持的指令，不会触发任何反作弊机制。此外，也可以尝试修改游戏配置文件来调整伤害参数，实现类似效果。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            作弊器是否会影响游戏帧率？
+                            <span class="arrow">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            通常来说，无限血作弊器仅在后台定时修改内存数值，对CPU和内存的占用极小，不会对帧率产生明显影响。但如果作弊器代码质量低劣或存在内存泄漏问题，长期运行后可能会导致游戏卡顿。建议使用任务管理器监控游戏进程资源占用情况。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            如何卸载作弊器？
+                            <span class="arrow">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            大部分作弊器是绿色软件，直接删除文件即可。但部分工具可能安装了驱动级组件或修改了系统注册表，建议使用控制面板的"卸载程序"功能，或使用专门的卸载工具清理残留。卸载后重启电脑，并运行杀毒软件进行全盘扫描以确保系统干净。
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            CS1.6无限血作弊器支持哪些版本？
+                            <span class="arrow">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            目前市面上流传的作弊器主要针对CS1.6的v47、v48等常见版本开发，对早期版本（如v32）的兼容性较差。部分新版作弊器宣称支持所有版本，但实际测试中往往只对特定版本有效。建议在下载前确认工具说明中标注的支持版本范围。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">编辑团队</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">CS1.6官方指南</a></li>
+                        <li><a href="#">游戏社区论坛</a></li>
+                        <li><a href="#">反作弊政策解读</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">CS1.6地图下载站</a></li>
+                        <li><a href="#">电竞资讯平台</a></li>
+                        <li><a href="#">游戏硬件评测</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>法律声明</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用条款</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 CS1.6工具指南 - 本站内容仅供技术研究与学习交流，请遵守游戏规则与法律法规。</p>
+                <p style="margin-top: 5px;">请在合法合规的前提下使用游戏辅助工具，维护公平竞技环境。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 手风琴交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // 关闭其他已激活的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // 平滑滚动到锚点
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                              </html>
